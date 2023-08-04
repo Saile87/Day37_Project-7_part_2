@@ -13,6 +13,7 @@
 		56BD722F2A7AC4F800693880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BD722E2A7AC4F800693880 /* Preview Assets.xcassets */; };
 		56BD72362A7AC67F00693880 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD72352A7AC67E00693880 /* ExpenseItem.swift */; };
 		56BD72382A7AC81900693880 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD72372A7AC81900693880 /* Expenses.swift */; };
+		56BD723A2A7D766800693880 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BD72392A7D766800693880 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		56BD722E2A7AC4F800693880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56BD72352A7AC67E00693880 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		56BD72372A7AC81900693880 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		56BD72392A7D766800693880 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				56BD72272A7AC4F500693880 /* Day37_Project_7_part_2_gitApp.swift */,
 				56BD72292A7AC4F500693880 /* ContentView.swift */,
+				56BD72392A7D766800693880 /* AddView.swift */,
 				56BD72352A7AC67E00693880 /* ExpenseItem.swift */,
 				56BD72372A7AC81900693880 /* Expenses.swift */,
 				56BD722B2A7AC4F800693880 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				56BD72382A7AC81900693880 /* Expenses.swift in Sources */,
 				56BD722A2A7AC4F500693880 /* ContentView.swift in Sources */,
+				56BD723A2A7D766800693880 /* AddView.swift in Sources */,
 				56BD72362A7AC67F00693880 /* ExpenseItem.swift in Sources */,
 				56BD72282A7AC4F500693880 /* Day37_Project_7_part_2_gitApp.swift in Sources */,
 			);
