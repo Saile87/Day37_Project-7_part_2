@@ -10,11 +10,12 @@ import SwiftUI
 struct AddView: View {
     
     @State private var name = ""
-    @State private var type = "Personal"
+    @State private var type = "Privat"
     @State private var amount = 0.0
     @ObservedObject var kosten : Kosten
+    @Environment(\.dismiss) var entfernen
     
-    let types = ["Personal", "Business"]
+    let types = ["Privat", "Geschäftlich"]
     
     var body: some View {
         NavigationView {
@@ -26,11 +27,12 @@ struct AddView: View {
                         Text($0)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: "USD")) .keyboardType(.decimalPad)
+                TextField("Amount", value: $amount, format: .currency(code: "EUR")) .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
             .toolbar {
                 Button("Save") {
+                    entfernen()
                     let item = SpesenPosten(name: name, type: type, amount: amount)
                     kosten.items.append(item)
                 }
