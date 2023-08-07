@@ -9,33 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var expenses = Expenses()
-    @State private var showingAddExpense = false
+    @StateObject var kosten = Kosten()
+    @State private var showingAddKosten = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
+                ForEach(kosten.items) { item in
                     Text(item.name)
                 }
                 .onDelete(perform: removeItems)
             }
-            .navigationTitle("iExpense")
+            .navigationTitle("iKosten")
             
             .toolbar {
                 Button {
-                    showingAddExpense = true
+                    showingAddKosten = true
                 } label: {
                     Image(systemName: "plus")
                 }
             }
-            .sheet(isPresented: $showingAddExpense) {
-                AddView(expenses: expenses)
+            .sheet(isPresented: $showingAddKosten) {
+                AddView(kosten: kosten)
             }
         }
     }
     func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+        kosten.items.remove(atOffsets: offsets)
     }
 }
 

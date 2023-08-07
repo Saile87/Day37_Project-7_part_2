@@ -8,10 +8,21 @@
 import Foundation
 
 class Kosten: ObservableObject {
-    @Published var items = [ExpenseItem]()
-    didSet {
-        if let encoded = try? JSONEncoder().encode(items) {
-            UserDefaults.standard.set(encoded, forKey: "Items")
+    @Published var items = [SpesenPosten]() {
+        
+        didSet {
+            if let encoded = try? JSONEncoder().encode(items) {
+                UserDefaults.standard.set(encoded, forKey: "Items")
+            }
         }
+    }
+    init() {
+        if let gespeichertesTeil = UserDefaults.standard.data(forKey: "Items") {
+            if let decodedItems = try? JSONDecoder().decode([SpesenPosten].self, from: gespeichertesTeil) {
+                items = decodedItems
+                return
+            }
+        }
+        items = []
     }
 }

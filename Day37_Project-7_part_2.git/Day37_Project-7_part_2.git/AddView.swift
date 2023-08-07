@@ -12,7 +12,7 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    @ObservedObject var expenses : Expenses
+    @ObservedObject var kosten : Kosten
     
     let types = ["Personal", "Business"]
     
@@ -29,12 +29,18 @@ struct AddView: View {
                 TextField("Amount", value: $amount, format: .currency(code: "USD")) .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
+            .toolbar {
+                Button("Save") {
+                    let item = SpesenPosten(name: name, type: type, amount: amount)
+                    kosten.items.append(item)
+                }
+            }
         }
     }
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(expenses: Expenses())
+        AddView(kosten: Kosten())
     }
 }
