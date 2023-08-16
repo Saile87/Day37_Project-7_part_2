@@ -10,6 +10,7 @@ import Foundation
 class Kosten: ObservableObject {
     @Published var items = [SpesenPosten]() {
         
+        /Users/eliasbreitenbach/Documents/xCodeProject/Day37_Project-7_part_2/Day37_Project-7_part_2.git/Day37_Project-7_part_2.git/Kosten.swift
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
